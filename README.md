@@ -15,14 +15,15 @@ Simply call .progSlider() on any element to convert it into a slider - note that
 
 When creating a new slider, the following options are available:
 ```
-.progSlider({options}:
+.progSlider({options}):
 ```
 
 ```
-min: // minimum value for the slider, defaults to 0
-max: // maximum value for the slider, defaults to 100
-start: // maximum value for the slider, defaults to 50
-change: // function to call when the slider value is changed, passed one argument- the sliders new value
+min: // minimum value for the slider, defaults to 0 (integer)
+max: // maximum value for the slider, defaults to 100 (integer)
+start: // maximum value for the slider, defaults to 50 (integer)
+vertical: // is the slider avertical (boolean) - if not set will calculate based on element orientation
+change: // (function) to call when the slider value is changed, passed one argument- the sliders new value
 ```
 
 Methods:
@@ -42,7 +43,7 @@ Additional
 
 An existing slider can be passed new options and redefined at any point by simply calling .progSlider({options}) on it again.
 
-
+The slider has been designed with only the minimum options/events but in an open ended way providing flexibility for extension. As such there are no tooltips or related value fields- however these can be linked to/defined etc and referenced in the change event of a slider. Note that defined slider elements.
 
 ----------------------
 
