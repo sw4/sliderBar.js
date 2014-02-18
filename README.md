@@ -23,8 +23,9 @@ min: // minimum value for the slider, defaults to 0 (integer)
 max: // maximum value for the slider, defaults to 100 (integer)
 start: // maximum value for the slider, defaults to 50 (integer)
 vertical: // is the slider avertical (boolean) - if not set will calculate based on element orientation
-onSlide: // (function) to call when the slider value is changed by sliding, passed one argument- the sliders new value, only triggered by sliding not by clicking to change value or by calling setProgSlider()
-onChange: // (function) to call when the slider value is changed, passed one argument- the sliders new value, only triggered by clicking to change value, at the end of a slide or by calling setProgSlider()
+onSlide: // (function) executed during slider value changing during slide, or click ONLY - passed the value as an argument
+onSet: // (function) executed during slider value changing during click, or calling setProgSlider() method ONLY - passed the value as an argument
+onChange: // (function) executed any time the slider value changes - passed the value as an argument
 ```
 
 Methods:
