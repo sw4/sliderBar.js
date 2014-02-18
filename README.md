@@ -3,7 +3,7 @@ progSlider.js
 
 Ultra-light jQuery Progress Slider
 
-Designed to be ultra light at only 2kb (js) 0.9kb (css)
+Designed to be ultra light at only 2kb (js) 0.9kb (css) - requires HTML5/CSS3 support.
 
 USAGE:
 
