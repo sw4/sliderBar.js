@@ -38,7 +38,7 @@
     border-radius:3px;
     opacity:0;
 }
-.progSlide[data-progslider-handle=true] .progSlider-handle{
+.progSlider[data-progslider-handle=true] .progSlider-handle{
     opacity:1;
 }
 .progSlider-handle:before, .progSlider-handle:after {
