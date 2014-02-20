@@ -13,14 +13,39 @@
     <![endif]-->
     
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="https://raw.github.com/sw4/progSlider.js/master/progSlider.min.js"></script>
-    <link rel="stylesheet" href="https://raw.github.com/sw4/progSlider.js/master/progSlider.min.css">
+    <script src="https://rawgithub.com/sw4/progSlider.js/master/progSlider.min.js"></script>
+    <link rel="stylesheet" href="https://rawgithub.com/sw4/progSlider.js/master/progSlider.min.css">
+    <script>
+        $( document ).ready(function() {
+        $("#slider_1").progSlider();
+        $("#slider_2").progSlider();
+        $("#slider_3").progSlider({
+            onChange:function(value){
+                $("#slider_3_input").val(value);
+            }
+        });
+        $("#slider_4").progSlider({
+            handle:true
+        });
+        });
+    </script>
     <style>
-        #slider_1{
-            width:100px;
-            height:20px;
+        h3, h4{
+            margin:20px 0 0 0;
         }
-                
+        h3{
+            text-decoration:underline;
+        }
+        h4{
+            color:#3A3A3A;
+        }
+        h2{
+            margin-top:40px;
+            border-bottom:1px dotted #c0c0c0;
+        }
+        h2:first-child{
+            margin-top:0;
+        }
     </style>
   </head>
   <body>
@@ -39,32 +64,151 @@
         </ul>
       </header>
       <section>
-        <h3>
-        
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>About</h3>
+        <h2><a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
 
 <p>
 progSlider.js is an ultra-light weight script built to provide easily themed progress sliders to any page.
 </p>
 
-<pre><code>
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h2><a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>
+To use, you will need to download both the progSlider script and css files and link to them in the <strong>HEAD</strong> section of your page. Note that progSlider.js is dependant on jQuery which will need to be linked to beforehand.
+</p>
+
+<pre><code>&lt;head&gt;
+    &lt;script src='jquery.min.js'&gt;&lt;/script&gt;
+    &lt;script src='progSlider.min.js'&gt;&lt;/script&gt;
+    &lt;link rel='stylesheet' href='progSlider.min.css'&gt;
+&lt;/head&gt;
 </code></pre>
 
+<h2><a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Basic Use</h2>
+
+To initialize a slider, simply call the <strong>progSlider(<em>options</em>)</strong> method on any element identified using a jQuery selector that has the class <strong>progSlider</strong>.
+
+<h4>HTML:</h4>
+<pre><code>&lt;div id="slider_1" class="progSlider"&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>jQuery:</h4>
+<pre><code>$("#slider_1").progSlider();
+</code></pre>
+
+<h4>Result:</h4>
 <div id="slider_1" class="progSlider"></div>
-<script>
-$( document ).ready(function() {
-$("#slider_1").progSlider();
+
+
+<h2><a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+A slider can be initialized with the following options:
+
+<h4>min</h4>
+<em>Integer</em><br>Defaults to 0, represents the minimum value of the slider, must always be greater than zero
+
+<h4>max</h4>
+<em>Integer</em><br>Defaults to 100, represents the maximum value of the slider
+
+<h4>start</h4>
+<em>Integer</em><br>Defaults to 50, represents the starting value of the sldier, must always be greater than the minimum value, or less than the maximum, otherwise it will revert to the closest of the two
+
+<h4>vertical</h4>
+<em>Boolean</em><br>Defaults to a value calculated from the underling slider elements orientation
+
+<h4>handle</h4>
+<em>Boolean</em><br>Defaults to false, whether to provide a visible drag handle or not
+
+
+<h4>onSlide</h4>
+<em>Function(value)</em><br>Event executed during slider value changing during slide (mousedown and drag), or on click - passed the new value as an argument
+
+<h4>onSet</h4>
+<em>Function(value)</em><br>Event executed during slider value changing during click, or calling setProgSlider() method - passed the value as an argument
+
+<h4>onSlide</h4>
+<em>Function(value)</em><br>Event executed any time the slider value changes - passed the value as an argument
+
+
+
+<h2><a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Methods</h2>
+
+The following methods are available on any <strong>progSlider</strong> object:
+
+<h4>progSlider(<em>options</em>)</h4>
+Allows any slider options (see above) to be overwritten after the slider has been initialized
+
+
+<h4>setProgSlider(<em>value, trigger</em>)</h4>
+Manually set the value of a slider, <em>trigger</em> is an optional boolean - if set to <em>true</em>, the <em>onSet</em> and <em>onChange</em> events are fired.
+
+
+<h4>getProgSlider()</h4>
+Get the current slider value.
+
+
+<h2><a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+progSlider.js requires jQuery. Note hat the library has only been tested with jQuery 2.1x though should be compatible with any reasonably current version. progSlider also relies on some CSS3 as part of its default styling, however these can be overridden and do not effect functionality.
+
+<h2><a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>Vertical Slider</h3>
+
+<h4>HTML:</h4>
+<pre><code>&lt;div id="slider_2" class="progSlider"  style="height:100px;width:20px;"&gt;&lt;/div&gt;
+</code></pre>
+
+
+<h4>jQuery:</h4>
+<pre><code>$("#slider_2").progSlider();
+</code></pre>
+
+
+<h4>Result:</h4>
+<div id="slider_2" class="progSlider" style='height:100px;width:20px;'></div>
+
+
+<h3>Slider Linked to Input Field</h3>
+
+<h4>HTML:</h4>
+<pre><code>&lt;div id="slider_3" class="progSlider"&gt;&lt;/div&gt;
+&lt;br&gt;
+Value: &lt;input id="slider_3_input" type="text"/&gt;
+</code></pre>
+
+
+<h4>jQuery:</h4>
+<pre><code>$("#slider_3").progSlider({
+    onChange:function(value){    
+        $("#slider_3_input").val(value);
+    }
 });
-</script>
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+</code></pre>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h4>Result:</h4>
+<div id="slider_3" class="progSlider"></div><br>
+Value: <input id="slider_3_input" type="text"/>
+
+
+<h3>Slider With Drag Handle Enabled</h3>
+
+<h4>HTML:</h4>
+<pre><code>&lt;div id="slider_4" class="progSlider"&gt;&lt;/div&gt;
+</code></pre>
+
+
+<h4>jQuery:</h4>
+<pre><code>$("#slider_3").progSlider({
+    handle:true
+});
+</code></pre>
+
+
+<h4>Result:</h4>
+<div id="slider_4" class="progSlider"></div><br>
+
+
+
 
 
       </section>
