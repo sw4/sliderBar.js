@@ -9,8 +9,10 @@
     border: 1px solid #C1C1C1;
     box-shadow: 0 1px 1px #000 inset, 0 3px 6px -5px #A5A5A5;
     border-radius:4px;
+    overflow:hidden;
 }
 .progSlider-progress {
+    box-sizing:border-box;
     position:relative;
     background:#4EB2E8;
     height:100%;
