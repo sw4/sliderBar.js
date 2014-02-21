@@ -11,7 +11,12 @@ function progSliderCalcPos(el, event) {
 $('html').on('mouseup', function () {
     var progSlider = $('[data-progSlider-drag=true]');
     if (progSlider.length > 0) {
-        // $('body, html').attr('unselectable', 'off').css('user-select', 'text').on('selectstart', true);
+        $('body, html').css({
+          '-moz-user-select': '',
+          '-khtml-user-select': '',
+          '-webkit-user-select': '',
+          'user-select': ''
+        });
         progSlider.attr('data-progSlider-drag', false).trigger('onSet', [progSlider.getProgSlider()]);
     }
 });
@@ -88,7 +93,7 @@ $.fn.extend({
                 var max = progSlider.attr('data-progSlider-max'),
                     vertical = (progSlider.attr('data-progSlider-vertical') === 'true') ? true : false;
                 val = (val <= max) ? val : max;
-                progSlider.children('.progSlider-progress').css(vertical ? 'height' : 'width', 100 * val / max + '%');
+                progSlider.children('.progSlider-progress').css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
                 if (trigger === true) {progSlider.trigger('onSet', [val]); }
             }
         });
