@@ -12,10 +12,10 @@ $('html').on('mouseup', function () {
     var progSlider = $('[data-progSlider-drag=true]');
     if (progSlider.length > 0) {
         $('body, html').css({
-          '-moz-user-select': '',
-          '-khtml-user-select': '',
-          '-webkit-user-select': '',
-          'user-select': ''
+            '-moz-user-select': '',
+            '-khtml-user-select': '',
+            '-webkit-user-select': '',
+            'user-select': ''
         });
         progSlider.attr('data-progSlider-drag', false).trigger('onSet', [progSlider.getProgSlider()]);
     }
@@ -75,10 +75,10 @@ $.fn.extend({
             if (!isInit) {
                 progSlider.on('mousedown', function (event) {
                     $('body, html').css({
-                      '-moz-user-select': 'none',
-                      '-khtml-user-select': 'none',
-                      '-webkit-user-select': 'none',
-                      'user-select': 'none'
+                        '-moz-user-select': 'none',
+                        '-khtml-user-select': 'none',
+                        '-webkit-user-select': 'none',
+                        'user-select': 'none'
                     });
                     progSlider.attr('data-progSlider-drag', true);
                 });
