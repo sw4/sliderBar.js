@@ -1,4 +1,4 @@
-.progSlider {
+.sliderBar {
     box-sizing:border-box;
     min-height:5px;
     height:20px;
@@ -10,7 +10,7 @@
     box-shadow: 0 1px 1px #000 inset, 0 3px 6px -5px #A5A5A5;
     border-radius:4px;
 }
-.progSlider-progress {
+.sliderBar-progress {
     box-sizing:border-box;
     position:relative;
     background:#4EB2E8;
@@ -22,10 +22,10 @@
     bottom:0;
     position:absolute;
 }
-.progSlider[data-progSlider-vertical=true] .progSlider-progress {
+.sliderBar[data-sliderBar-vertical=true] .sliderBar-progress {
     left:0;
 }
-.progSlider-handle {
+.sliderBar-handle {
     position:absolute;
     top:-5px;
     bottom:-5px;
@@ -39,10 +39,10 @@
     border-radius:3px;
     opacity:0;
 }
-.progSlider[data-progslider-handle=true] .progSlider-handle{
+.sliderBar[data-sliderBar-handle=true] .sliderBar-handle{
     opacity:1;
 }
-.progSlider-handle:before, .progSlider-handle:after {
+.sliderBar-handle:before, .sliderBar-handle:after {
     content:"";
     background:#000;
     display: block;
@@ -52,6 +52,6 @@
     top: 30%;
     width: 1px;
 }
-.progSlider-handle:after {
+.sliderBar-handle:after {
     left: 60%;
 }
