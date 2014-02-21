@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Progslider.js by sw4</title>
+    <title>sliderBar.js by sw4</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -13,18 +13,18 @@
     <![endif]-->
     
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="https://rawgithub.com/sw4/progSlider.js/master/progSlider.js"></script>
-    <link rel="stylesheet" href="https://rawgithub.com/sw4/progSlider.js/master/progSlider.css">
+    <script src="https://rawgithub.com/sw4/sliderBar.js/master/sliderBar.js"></script>
+    <link rel="stylesheet" href="https://rawgithub.com/sw4/sliderBar.js/master/sliderBar.css">
     <script>
         $( document ).ready(function() {
-        $("#slider_1").progSlider();
-        $("#slider_2").progSlider();
-        $("#slider_3").progSlider({
+        $("#slider_1").sliderBar();
+        $("#slider_2").sliderBar();
+        $("#slider_3").sliderBar({
             onChange:function(value){
                 $("#slider_3_input").val(value);
             }
         });
-        $("#slider_4").progSlider({
+        $("#slider_4").sliderBar({
             handle:true
         });
         });
@@ -51,52 +51,52 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>progSlider.js</h1>
+        <h1>sliderBar.js</h1>
         <p>Ultra-light jQuery/HTML5 Progress Slider</p>
 
-        <p class="view"><a href="https://github.com/sw4/progSlider.js">View the Project on GitHub <small>sw4/progSlider.js</small></a></p>
+        <p class="view"><a href="https://github.com/sw4/sliderBar.js">View the Project on GitHub <small>sw4/sliderBar.js</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/sw4/progSlider.js/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/sw4/progSlider.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/sw4/progSlider.js">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/sw4/sliderBar.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sw4/sliderBar.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sw4/sliderBar.js">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h2><a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
 
 <p>
-progSlider.js is an ultra-light weight script built to provide easily themed progress sliders to any page.
+sliderBar.js is an ultra-light weight script built to provide easily themed progress sliders to any page.
 </p>
 
 <h2><a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
 
 <p>
-To use, you will need to download both the progSlider script and css files and link to them in the <strong>HEAD</strong> section of your page. Note that progSlider.js is dependant on jQuery which will need to be linked to beforehand.
+To use, you will need to download both the sliderBar script and css files and link to them in the <strong>HEAD</strong> section of your page. Note that sliderBar.js is dependant on jQuery which will need to be linked to beforehand.
 </p>
 
 <pre><code>&lt;head&gt;
     &lt;script src='jquery.min.js'&gt;&lt;/script&gt;
-    &lt;script src='progSlider.min.js'&gt;&lt;/script&gt;
-    &lt;link rel='stylesheet' href='progSlider.min.css'&gt;
+    &lt;script src='sliderBar.min.js'&gt;&lt;/script&gt;
+    &lt;link rel='stylesheet' href='sliderBar.min.css'&gt;
 &lt;/head&gt;
 </code></pre>
 
 <h2><a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Basic Use</h2>
 
-To initialize a slider, simply call the <strong>progSlider(<em>arguments</em>)</strong> method on any element identified using a jQuery selector that has the class <strong>progSlider</strong>.
+To initialize a slider, simply call the <strong>sliderBar(<em>arguments</em>)</strong> method on any element identified using a jQuery selector that has the class <strong>sliderBar</strong>.
 
 <h4>HTML:</h4>
-<pre><code>&lt;div id="slider_1" class="progSlider"&gt;&lt;/div&gt;
+<pre><code>&lt;div id="slider_1" class="sliderBar"&gt;&lt;/div&gt;
 </code></pre>
 
 <h4>jQuery:</h4>
-<pre><code>$("#slider_1").progSlider();
+<pre><code>$("#slider_1").sliderBar();
 </code></pre>
 
 <h4>Result:</h4>
-<div id="slider_1" class="progSlider"></div>
+<div id="slider_1" class="sliderBar"></div>
 
 
 <h2><a name="arguments" class="anchor" href="#arguments"><span class="octicon octicon-link"></span></a>Arguments</h2>
@@ -123,7 +123,7 @@ A slider can be initialized with the following arguments:
 <em>Function(value)</em><br>Event executed during slider value changing during slide (mousedown and drag), or on click - passed the new value as an argument
 
 <h4>onSet</h4>
-<em>Function(value)</em><br>Event executed during slider value changing during click, or calling setProgSlider() method - passed the value as an argument
+<em>Function(value)</em><br>Event executed during slider value changing during click, or calling setsliderBar() method - passed the value as an argument
 
 <h4>onSlide</h4>
 <em>Function(value)</em><br>Event executed any time the slider value changes - passed the value as an argument
@@ -132,52 +132,52 @@ A slider can be initialized with the following arguments:
 
 <h2><a name="methods" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h2>
 
-The following methods are available on any <strong>progSlider</strong> object:
+The following methods are available on any <strong>sliderBar</strong> object:
 
-<h4>progSlider(<em>arguments</em>)</h4>
+<h4>sliderBar(<em>arguments</em>)</h4>
 Allows any slider arguments (see above) to be overwritten after the slider has been initialized
 
 
-<h4>setProgSlider(<em>value, trigger</em>)</h4>
+<h4>setsliderBar(<em>value, trigger</em>)</h4>
 Manually set the value of a slider, <em>trigger</em> is an optional boolean - if set to <em>true</em>, the <em>onSet</em> and <em>onChange</em> events are fired.
 
 
-<h4>getProgSlider()</h4>
+<h4>getsliderBar()</h4>
 Get the current slider value.
 
 
 <h2><a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
-progSlider.js requires jQuery. Note that the library has only been tested with jQuery 2.1x though should be compatible with any reasonably current version. progSlider also relies on some CSS3 as part of its default styling, however these can be overridden and do not effect functionality.
+sliderBar.js requires jQuery. Note that the library has only been tested with jQuery 2.1x though should be compatible with any reasonably current version. sliderBar also relies on some CSS3 as part of its default styling, however these can be overridden and do not effect functionality.
 
 <h2><a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <h3>Vertical Slider</h3>
 
 <h4>HTML:</h4>
-<pre><code>&lt;div id="slider_2" class="progSlider"  style="height:100px;width:20px;"&gt;&lt;/div&gt;
+<pre><code>&lt;div id="slider_2" class="sliderBar"  style="height:100px;width:20px;"&gt;&lt;/div&gt;
 </code></pre>
 
 
 <h4>jQuery:</h4>
-<pre><code>$("#slider_2").progSlider();
+<pre><code>$("#slider_2").sliderBar();
 </code></pre>
 
 
 <h4>Result:</h4>
-<div id="slider_2" class="progSlider" style='height:100px;width:20px;'></div>
+<div id="slider_2" class="sliderBar" style='height:100px;width:20px;'></div>
 
 
 <h3>Slider Linked to Input Field</h3>
 
 <h4>HTML:</h4>
-<pre><code>&lt;div id="slider_3" class="progSlider"&gt;&lt;/div&gt;
+<pre><code>&lt;div id="slider_3" class="sliderBar"&gt;&lt;/div&gt;
 &lt;br&gt;
 Value: &lt;input id="slider_3_input" type="text"/&gt;
 </code></pre>
 
 
 <h4>jQuery:</h4>
-<pre><code>$("#slider_3").progSlider({
+<pre><code>$("#slider_3").sliderBar({
     onChange:function(value){    
         $("#slider_3_input").val(value);
     }
@@ -186,26 +186,26 @@ Value: &lt;input id="slider_3_input" type="text"/&gt;
 
 
 <h4>Result:</h4>
-<div id="slider_3" class="progSlider"></div><br>
+<div id="slider_3" class="sliderBar"></div><br>
 Value: <input id="slider_3_input" type="text"/>
 
 
 <h3>Slider With Drag Handle Enabled</h3>
 
 <h4>HTML:</h4>
-<pre><code>&lt;div id="slider_4" class="progSlider"&gt;&lt;/div&gt;
+<pre><code>&lt;div id="slider_4" class="sliderBar"&gt;&lt;/div&gt;
 </code></pre>
 
 
 <h4>jQuery:</h4>
-<pre><code>$("#slider_3").progSlider({
+<pre><code>$("#slider_3").sliderBar({
     handle:true
 });
 </code></pre>
 
 
 <h4>Result:</h4>
-<div id="slider_4" class="progSlider"></div><br>
+<div id="slider_4" class="sliderBar"></div><br>
 
 
 
@@ -215,7 +215,7 @@ Value: <input id="slider_3_input" type="text"/>
       <footer>     
         <p>This project is maintained by <a href="https://github.com/sw4">sw4</a></p>
               <p><small><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br>Please view the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons License (CC BY 3.0)</a><br>
-<br><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">progSlider.js</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.samwheeler.info" property="cc:attributionName" rel="cc:attributionURL">Sam Wheeler</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
+<br><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">sliderBar.js</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.samwheeler.info" property="cc:attributionName" rel="cc:attributionURL">Sam Wheeler</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</small></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
