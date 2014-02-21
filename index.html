@@ -22,6 +22,9 @@
                  $("#slider_3_input").val(value);
              }
          });
+         $("#slider_3_input").on('change', function(){
+            $("#slider_3").setsliderBar($(this).val());
+         });
          $("#slider_4").sliderBar({
              handle:true
          });
