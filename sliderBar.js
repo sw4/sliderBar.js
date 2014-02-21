@@ -7,7 +7,6 @@ function sliderBarCalcPos(el, event) {
         el.trigger('onSlide', [val]);
     }
 }
-
 $('html').on('mouseup', function () {
     var sliderBar = $('[data-sliderBar-drag=true]');
     if (sliderBar.length > 0) {
