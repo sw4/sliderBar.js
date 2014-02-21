@@ -3,7 +3,7 @@ function progSliderCalcPos(el, event) {
         perc = (vertical ? 1 - ((event.pageY - el.offset().top) / el.height()) :  (event.pageX - el.offset().left) / el.width()),
         val = parseInt(el.attr('data-progSlider-max') * perc, 10);
     if (val <= el.attr('data-progSlider-max') && val >= el.attr('data-progSlider-min')) {
-        el.children('.progSlider-progress').css(vertical ? 'height' : 'width', perc * 100 + '%');
+        el.children('.progSlider-progress').css(vertical ? 'height' : 'width', Math.floor(perc * 100) + '%');
         el.trigger('onSlide', [val]);
     }
 }
@@ -47,7 +47,7 @@ $.fn.extend({
             if (!isInit) {
                 progSlider.html('').append("<div class='progSlider-progress'><div class='progSlider-handle'></div></div>");
             }
-            progSlider.children('.progSlider-progress').css(config.vertical ? 'height' : 'width', 100 * config.start / config.max + '%');
+            progSlider.children('.progSlider-progress').css(config.vertical ? 'height' : 'width', Math.floor(100 * config.start / config.max) + '%');
             progSlider.attr({
                 'data-progSlider': true,
                 'data-progSlider-min': config.min,
