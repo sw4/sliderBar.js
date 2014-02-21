@@ -69,7 +69,12 @@ $.fn.extend({
             }
             if (!isInit) {
                 progSlider.on('mousedown', function (event) {
-                    $('body, html').attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);
+                    $('body, html').css({
+                      '-moz-user-select': 'none',
+                      '-khtml-user-select': 'none',
+                      '-webkit-user-select': 'none',
+                      'user-select': 'none'
+                    });
                     progSlider.attr('data-progSlider-drag', true);
                 });
             }
