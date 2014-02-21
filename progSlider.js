@@ -11,7 +11,7 @@ function progSliderCalcPos(el, event) {
 $('html').on('mouseup', function () {
     var progSlider = $('[data-progSlider-drag=true]');
     if (progSlider.length > 0) {
-        // $(body, html).attr('unselectable', 'off').css('user-select', 'text').on('selectstart', true);
+        // $('body, html').attr('unselectable', 'off').css('user-select', 'text').on('selectstart', true);
         progSlider.attr('data-progSlider-drag', false).trigger('onSet', [progSlider.getProgSlider()]);
     }
 });
@@ -69,7 +69,7 @@ $.fn.extend({
             }
             if (!isInit) {
                 progSlider.on('mousedown', function (event) {
-                    $(body, html).attr('unselectable', 'on').css('user-select', 'none');
+                    $('body, html').attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);
                     progSlider.attr('data-progSlider-drag', true);
                 });
             }
