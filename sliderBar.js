@@ -94,7 +94,13 @@ $.fn.extend({
                 var max = sliderBar.attr('data-sliderBar-max'),
                     vertical = (sliderBar.attr('data-sliderBar-vertical') === 'true') ? true : false;
                 val = (val <= max) ? val : max;
-                sliderBar.attr('data-sliderBar-animate')!=='false' ? sliderBar.children('.sliderBar-progress').animate({(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%')}, sliderBar.attr('data-sliderBar-animate')) : sliderBar.children('.sliderBar-progress').css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
+                var animate=sliderBar.attr('data-sliderBar-animate');
+                var progressBar=sliderBar.children('.sliderBar-progress');
+                if(animate!=='false'){
+                    progressBar.animate({vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%'}, animate);
+                }else{
+                    progressBar.css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
+                }
                 if (trigger === true) {sliderBar.trigger('onSet', [val]); }
             }
         });
