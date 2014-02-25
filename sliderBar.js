@@ -97,7 +97,7 @@ $.fn.extend({
                 var animate=sliderBar.attr('data-sliderBar-animate');
                 var progressBar=sliderBar.children('.sliderBar-progress');
                 if(animate!=='false'){
-                    progressBar.animate({vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%'}, animate);
+                    progressBar.animate({(vertical ? 'height' : 'width'), Math.floor(100 * val / max) + '%'}, animate);
                 }else{
                     progressBar.css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
                 }
