@@ -32,6 +32,7 @@ $.fn.extend({
             max: (options && options.max) || 100,
             start: (options && options.start) || 50,
             handle: (options && options.handle) || false,
+            animate: (options && options.animate) || 1000,
             onSlide: (options && options.onSlide),
             onSet: (options && options.onSet),
             onChange: (options && options.onChange)
@@ -53,6 +54,7 @@ $.fn.extend({
                 'data-sliderBar-max': config.max,
                 'data-sliderBar-start': config.start,
                 'data-sliderBar-handle': config.handle,
+                'data-sliderBar-animate': config.animate,
                 'data-sliderBar-vertical': config.vertical
             });
             sliderBar.on('onSlide', function (event, val) {
@@ -92,7 +94,7 @@ $.fn.extend({
                 var max = sliderBar.attr('data-sliderBar-max'),
                     vertical = (sliderBar.attr('data-sliderBar-vertical') === 'true') ? true : false;
                 val = (val <= max) ? val : max;
-                sliderBar.children('.sliderBar-progress').css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
+                sliderBar.attr('data-sliderBar-animate')!=='false' ? sliderBar.children('.sliderBar-progress').animate({(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%')}, sliderBar.attr('data-sliderBar-animate')) : sliderBar.children('.sliderBar-progress').css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
                 if (trigger === true) {sliderBar.trigger('onSet', [val]); }
             }
         });
