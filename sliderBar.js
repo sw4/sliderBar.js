@@ -8,7 +8,7 @@ function sliderBarCalcPos(el, event) {
         var progressBar=el.children('.sliderBar-progress');
         if(animate!=='false' && event.type=='click'){
             var property=vertical ? 'height' : 'width';
-            progressBar.animate({property, Math.floor(perc * 100) + '%'}, animate);
+            progressBar.animate({property: Math.floor(perc * 100) + '%'}, animate);
         }else{
             progressBar.css(vertical ? 'height' : 'width', Math.floor(perc * 100) + '%');
         }
@@ -106,7 +106,7 @@ $.fn.extend({
                 var progressBar=sliderBar.children('.sliderBar-progress');
                 if(animate!=='false'){
                     var property=vertical ? 'height' : 'width';
-                    progressBar.animate({property, Math.floor(100 * val / max) + '%'}, animate);
+                    progressBar.animate({property: Math.floor(100 * val / max) + '%'}, animate);
                 }else{
                     progressBar.css(vertical ? 'height' : 'width', Math.floor(100 * val / max) + '%');
                 }
