@@ -3,7 +3,15 @@ function sliderBarCalcPos(el, event) {
         perc = (vertical ? 1 - ((event.pageY - el.offset().top) / el.height()) :  (event.pageX - el.offset().left) / el.width()),
         val = parseInt(el.attr('data-sliderBar-max') * perc, 10);
     if (val <= el.attr('data-sliderBar-max') && val >= el.attr('data-sliderBar-min')) {
-        el.children('.sliderBar-progress').css(vertical ? 'height' : 'width', Math.floor(perc * 100) + '%');
+
+        var animate=el.attr('data-sliderBar-animate');
+        var progressBar=el.children('.sliderBar-progress');
+        if(animate!=='false' && event.type=='click'){
+            var property=vertical ? 'height' : 'width';
+            progressBar.animate({property, Math.floor(perc * 100) + '%'}, animate);
+        }else{
+            progressBar.css(vertical ? 'height' : 'width', Math.floor(perc * 100) + '%');
+        }
         el.trigger('onSlide', [val]);
     }
 }
